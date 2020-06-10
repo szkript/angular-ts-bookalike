@@ -26,7 +26,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/turnjs/extras/jquery.min.1.7.js",
+              "src/assets/turnjs/lib/turn.js",
+              "src/assets/mystuff.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -119,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pdf2book"
+    }
+  },
+  "defaultProject": "pdf2book",
+  "cli": {
+    "analytics": "a6f3934b-39a1-40c2-852c-cc33590d617d"
+  }
 }
