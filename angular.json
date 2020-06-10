@@ -22,7 +22,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/pdf/turnjs4-api-docs.pdf"
+              "src/assets/pdf/turnjs4-api-docs.pdf",
+              "src/assets/pdf/pages",
+              "src/assets/pdf/pages/01.svg"
             ],
             "styles": [
               "src/styles.css"
