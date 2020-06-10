@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { PdfReaderService } from 'src/pdf-reader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'pdf2book';
+
+  constructor(private pdfReader: PdfReaderService) { }
+
+  ngOnInit() {
+    this.pdfReader.readPdf('src/assets/pdf/turnjs4-api-docs.pdf');
+  }
 }

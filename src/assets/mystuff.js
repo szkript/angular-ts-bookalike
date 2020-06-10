@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", (evt) => {
-  console.log("nani");
   var flipbookEL = document.getElementById('flipbook');
 
   window.addEventListener('resize', function (e) {
