@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private pdfReader: PdfReaderService) { }
 
   ngOnInit() {
-    this.pdfReader.readPdf('src/assets/pdf/turnjs4-api-docs.pdf');
+    this.pdfReader.readPdf('./assets/pdf/turnjs4-api-docs.pdf')
+      .then(text => text.forEach(x => console.log(x)), reason => console.error(reason));
   }
 }
