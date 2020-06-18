@@ -41,6 +41,3 @@ export class PdfReaderService {
   }
 
 }
-function isCanvas(obj: HTMLCanvasElement | HTMLElement): obj is HTMLCanvasElement {
-  return obj.tagName === 'CANVAS';
-}
