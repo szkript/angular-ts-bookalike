@@ -34,10 +34,10 @@ export class AppComponent implements OnInit {
     loadingTask.promise.then(function (pdf) {
       for (let i = 1; i < pdf.numPages; i++) {
         pdf.getPage(i).then(function (page) {
-          let scale = 1.5;
+          let scale = 1;
           let viewport = page.getViewport({scale: scale});
 
-          let canvas = canvass[i];
+          let canvas = canvass[i-1];
           let context = canvas.getContext('2d');
           canvas.height = viewport.height;
           canvas.width = viewport.width;

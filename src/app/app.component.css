@@ -1,9 +1,12 @@
 html,
 body {
-  background-color: #efefef;
+  background-color: #ff8686;
   height: 100%;
   margin: 0;
   overflow: hidden;
+}
+.container {
+  background-color: #452d30;
 }
 
 .wrapper {
