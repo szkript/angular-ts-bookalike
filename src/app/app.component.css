@@ -5,9 +5,6 @@ body {
   margin: 0;
   overflow: hidden;
 }
-.container {
-  background-color: #452d30;
-}
 
 .wrapper {
   align-items: center;
