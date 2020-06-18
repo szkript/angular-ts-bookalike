@@ -17,24 +17,27 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const canvasContainer = document.getElementById('bookWrapper');
     let loadingTask = pdfjsLib.getDocument('./assets/pdf/turnjs4-api-docs.pdf');
-
-    function createCanvas(i: number) {
-      let canvas = document.createElement('canvas') as HTMLCanvasElement;
-      canvas.setAttribute('id', `the-canvas-${i}`);
-      canvas.setAttribute('width', `400`);
-      canvas.setAttribute('height', `600`);
-      return canvas
+    const flipbook = document.getElementById('flipbook');
+    for (let x = 1;x < 27;x++){
+      flipbook.appendChild(createCanvas());
     }
 
+    function createCanvas() {
+      let canvas = document.createElement('canvas') as HTMLCanvasElement;
+      canvas.setAttribute('id', `canvas`);
+      // canvas.setAttribute('width', `400`);
+      // canvas.setAttribute('height', `600`);
+      return canvas
+    }
+    let canvass = document.querySelectorAll('canvas');
     loadingTask.promise.then(function (pdf) {
       for (let i = 1; i < pdf.numPages; i++) {
         pdf.getPage(i).then(function (page) {
           let scale = 1.5;
           let viewport = page.getViewport({scale: scale});
 
-          let canvas = createCanvas(i);
+          let canvas = canvass[i];
           let context = canvas.getContext('2d');
           canvas.height = viewport.height;
           canvas.width = viewport.width;
@@ -44,7 +47,6 @@ export class AppComponent implements OnInit {
             viewport: viewport
           };
           page.render(renderContext);
-          canvasContainer.appendChild(canvas);
         })
       }
     })
